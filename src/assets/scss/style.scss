@@ -1,0 +1,8 @@
+//generic base styles
+@import 'base/colors';
+@import 'base/variables';
+
+//Components
+@import '../../app/app.scss';
+@import '../../components/PostDetail/postDetail.scss';
+@import '../../components/PostList/postList.scss';

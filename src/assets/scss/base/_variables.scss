@@ -1,0 +1,36 @@
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+$grid-breakpoints: (
+  xs: 375px,
+  sm: 414px,
+  md: 768px,
+  lg: 1080px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  xs: 375px,
+  sm: 414px,
+  md: 726px,
+  lg: 1080px
+);
+
+$font-size-base: 1.4rem;
+
+$h1-font-size: 3.3rem;
+$h2-font-size: 2.8rem;
+$h3-font-size: 2.5rem;
+$h4-font-size: 2.1rem;
+$h5-font-size: $font-size-base;
+$h6-font-size: $font-size-base;
+
+$enable-grid-classes: true;
+$enable-responsive-font-sizes: true;
+
+$border-none: 'none' !default;
+
+$link-color: $color-secondary;
+$link-decoration: none;
+$link-hover-color: $color-secondary;
+$link-hover-decoration: none;
