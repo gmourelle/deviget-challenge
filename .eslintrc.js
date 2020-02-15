@@ -1,6 +1,6 @@
 module.exports = {
   extends: ['airbnb', 'prettier', 'prettier/react'],
-
+  parser: 'babel-eslint',
   env: {
     browser: true,
     es6: true
@@ -19,9 +19,22 @@ module.exports = {
   },
   plugins: ['react', 'html', 'prettier', 'react-hooks'],
   rules: {
-    indent: ['error', 4],
+    'react/jsx-filename-extension': [
+      1,
+      {
+        extensions: ['.js', '.jsx']
+      }
+    ],
     'linebreak-style': ['error', 'unix'],
     quotes: ['error', 'single'],
-    semi: ['error', 'always']
+    semi: ['error', 'always'],
+    'import/imports-first': ['error', 'absolute-first'],
+    'import/newline-after-import': 'error',
+    'import/prefer-default-export': 0,
+    'no-unused-vars': 'warn',
+    'react/prop-types': 0,
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
+    'no-console': 0
   }
 };
