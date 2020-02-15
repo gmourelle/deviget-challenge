@@ -1,1 +1,1 @@
-export const URL_REDDIT = 'http://localhost:https://api.reddit.com/';
+export const URL_REDDIT = 'https://api.reddit.com/?limit=10';

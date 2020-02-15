@@ -1,25 +1,29 @@
 import {
   FETCH_POSTS_SUCCESS,
   FETCH_POSTS_REQUEST,
-  DELETE_POST_SUCCESS,
-  DELETE_ALL_POST_SUCCESS,
-  SELECTED_POST,
+  DISMISS_POST,
+  DISMISS_ALL_POST,
+  SELECT_POST,
   PAGER_CHANGE,
   RAISE_ERROR
 } from '../constants';
-import { getPosts } from '../../services';
+import getPosts from '../../services';
 // import { PER_PAGE } from '../constants';
 
 export function fetchPostsSuccess(data) {
-  return { type: FETCH_POSTS_SUCCESS, payload: { data } };
+  return { type: FETCH_POSTS_SUCCESS, payload: data };
 }
 
 export const postRequest = () => ({ type: FETCH_POSTS_REQUEST });
 
-export const selectPostSuccess = player => ({
-  type: SELECTED_POST,
-  payload: player
+export const selectPost = post => ({
+  type: SELECT_POST,
+  payload: post
 });
+
+export const dismissPost = id => ({ type: DISMISS_POST, payload: id });
+
+export const dismissAllPost = () => ({ type: DISMISS_ALL_POST });
 
 export const pagerChange = page => ({
   type: PAGER_CHANGE,
@@ -39,6 +43,6 @@ export const fetchPosts = () => {
       .then(data => {
         dispatch(fetchPostsSuccess(data));
       })
-      .catch(err => err);
+      .catch(err => raiseError(err));
   };
 };
