@@ -31,7 +31,10 @@ export const redditReducer = (state = initialState, action) => {
     }
 
     case SELECT_POST:
-      return { ...state, selectedPost: action.payload };
+      return {
+        ...state,
+        selectedPost: { ...action.payload }
+      };
 
     case DISMISS_POST: {
       const newState = state.posts.filter(

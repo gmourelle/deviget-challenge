@@ -8,9 +8,10 @@ const PostList = () => {
   const dispatch = useDispatch();
 
   const onDismissAll = () => dispatch(dismissAllPost());
+
   return (
     <div className="posts__container">
-      {posts && posts.map(({ data }) => <Post post={data} />)}
+      {posts && posts.map(post => <Post post={post.data} />)}
       <button type="button" onClick={onDismissAll}>
         dismiss All
       </button>

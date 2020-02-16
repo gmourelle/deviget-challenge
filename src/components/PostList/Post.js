@@ -1,24 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { selectPost, dismissPost } from '../../store/actions';
 
-import PropTypes from 'prop-types';
-
 const Post = ({ post }) => {
+  const [statusRead, setStatusRead] = useState(false);
   const dispatch = useDispatch();
-
   const onDismiss = () => dispatch(dismissPost(post.id));
-
+  const onSelectPost = () => {
+    setStatusRead(true);
+    dispatch(selectPost(post));
+  };
+  console.log(post);
   return (
-    <div className="post__container" onClick={() => dispatch(selectPost(post))}>
-      {post.title}
+    <div className="post__container">
+      <div>{post.author}</div>
+      <div onClick={onSelectPost}>{post.title}</div>
+      <div>
+        {post.thumbnail !== 'self' && (
+          <img alt="thumbnail" src={post.thumbnail} />
+        )}
+      </div>
+      <div className={`${statusRead ? 'post__read--unread' : 'post__read'}`}>
+        <span>read</span>
+      </div>
       <button type="button" onClick={onDismiss}>
         Dismiss
       </button>
     </div>
   );
 };
-
-Post.propTypes = {};
 
 export default Post;

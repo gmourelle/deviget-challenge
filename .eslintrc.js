@@ -3,18 +3,14 @@ module.exports = {
   parser: 'babel-eslint',
   env: {
     browser: true,
+    node: true,
     es6: true
-  },
-  //   extends: 'eslint:recommended',
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly'
   },
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2020,
     sourceType: 'module'
   },
   plugins: ['react', 'html', 'prettier', 'react-hooks'],

@@ -1,14 +1,27 @@
+.post {
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__read {
+    span {
+      border-radius: 50%;
+      background-color: red;
+    }
+    &--unread {
+      span {
+        border-radius: 50%;
+        background-color: blue;
+      }
+    }
+  }
+}
+
 .posts {
   &__container {
     display: flex;
     flex-direction: column;
     width: 50%;
-  }
-}
-
-.post {
-  &__container {
-    display: flex;
-    flex-direction: column;
   }
 }
