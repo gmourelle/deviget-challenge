@@ -1,5 +1,8 @@
 .detail {
   &__container {
     width: 50%;
+    position: fixed;
+    margin: 0 50%;
+    padding: 5px;
   }
 }

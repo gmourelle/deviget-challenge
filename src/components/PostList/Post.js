@@ -10,7 +10,6 @@ const Post = ({ post }) => {
     setStatusRead(true);
     dispatch(selectPost(post));
   };
-  console.log(post);
   return (
     <div className="post__container">
       <div>{post.author}</div>

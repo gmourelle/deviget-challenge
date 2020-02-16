@@ -35,11 +35,11 @@ export const raiseError = error => ({
   payload: error
 });
 
-export const fetchPosts = () => {
+export const fetchPosts = pager => {
   return dispatch => {
     dispatch(postRequest());
 
-    getPosts()
+    getPosts(pager)
       .then(data => {
         dispatch(fetchPostsSuccess(data));
       })

@@ -25,7 +25,7 @@ export const redditReducer = (state = initialState, action) => {
     case FETCH_POSTS_SUCCESS: {
       return {
         ...state,
-        posts: action.payload.data.children,
+        posts: action.payload.data,
         fetching: false
       };
     }
@@ -37,20 +37,19 @@ export const redditReducer = (state = initialState, action) => {
       };
 
     case DISMISS_POST: {
-      const newState = state.posts.filter(
+      const newState = state.posts.children.filter(
         ({ data }) => data.id !== action.payload
       );
+
       return {
         ...state,
-        currentPage: 0,
-        posts: newState
+        posts: { ...state.posts, children: newState }
       };
     }
 
     case DISMISS_ALL_POST:
       return {
         ...state,
-        currentPage: 0,
         posts: [],
         selectedPost: {}
       };
