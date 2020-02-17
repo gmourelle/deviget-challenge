@@ -1,5 +1,26 @@
 .home {
   &__container {
     display: flex;
+    width: 40%;
+    background-color: black;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: fixed;
+    width: 40%;
+    background-color: black;
+  }
+
+  &__pager {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  &__posts {
+    display: flex;
   }
 }

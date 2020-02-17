@@ -2,19 +2,27 @@
   &__container {
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid black;
+    color: $color-white;
   }
 
-  &__read {
-    span {
-      border-radius: 50%;
+  &__status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    &--unread {
+      background-color: blue;
+    }
+    &--read {
       background-color: red;
     }
-    &--unread {
-      span {
-        border-radius: 50%;
-        background-color: blue;
-      }
-    }
+  }
+
+  &__dismiss {
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+    margin-right: 10px;
   }
 }
 
@@ -22,6 +30,6 @@
   &__container {
     display: flex;
     flex-direction: column;
-    width: 50%;
+    margin-top: 10rem;
   }
 }
