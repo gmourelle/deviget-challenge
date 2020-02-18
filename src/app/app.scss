@@ -6,6 +6,10 @@
   &__left {
     width: 30%;
     background-color: black;
+
+    @media (min-width: map-get($grid-breakpoints, xs)) and (max-width: map-get($grid-breakpoints, sm)) {
+      width: 55%;
+    }
   }
 
   &__header {
@@ -15,6 +19,10 @@
     position: fixed;
     width: 30%;
     background-color: black;
+
+    @media (min-width: map-get($grid-breakpoints, xs)) and (max-width: map-get($grid-breakpoints, sm)) {
+      width: 55%;
+    }
   }
 
   &__content {
