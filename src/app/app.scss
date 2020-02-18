@@ -1,6 +1,9 @@
 .home {
   &__container {
     display: flex;
+  }
+
+  &__left {
     width: 40%;
     background-color: black;
   }
@@ -14,13 +17,24 @@
     background-color: black;
   }
 
+  &__content {
+    height: 100%;
+    background-color: black;
+    min-height: 1024px;
+  }
+
   &__pager {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 10px;
   }
 
   &__posts {
     display: flex;
+  }
+
+  &__spinner {
+    color: $color-white;
   }
 }

@@ -12,8 +12,6 @@ const initialState = {
   posts: [],
   selectedPost: {},
   fetching: false,
-  currentPage: 0,
-  total: 0,
   error: ''
 };
 

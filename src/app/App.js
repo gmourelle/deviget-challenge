@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { PostList, PostDetail, Header, Pager } from '../components';
 import { fetchPosts } from '../store/actions';
@@ -21,29 +21,32 @@ const App = () => {
   };
 
   return (
-    <Fragment>
-      {fetching ? (
-        <div>loading...</div>
-      ) : (
-        <div className="home__container">
-          <div className="home__header">
-            <Header />
-            <div className="home__pager">
-              <Pager
-                text="Prev"
-                disabled={!before}
-                onClickPage={onPreviousPage}
-              />
-              <Pager text="Next" disabled={!after} onClickPage={onNextPage} />
-            </div>
-          </div>
-          <div className="home__posts">
-            <PostList />
-            <PostDetail />
+    <div className="home__container">
+      <div className="home__left">
+        <div className="home__header">
+          <Header />
+          <div className="home__pager">
+            <Pager
+              text="Prev"
+              disabled={!before}
+              onClickPage={onPreviousPage}
+            />
+            <Pager text="Next" disabled={!after} onClickPage={onNextPage} />
           </div>
         </div>
-      )}
-    </Fragment>
+
+        <div className="home__content">
+          {fetching ? (
+            <div className="home__spinner">Loading...</div>
+          ) : (
+            <PostList />
+          )}
+        </div>
+      </div>
+      <div className="home__posts">
+        <PostDetail />
+      </div>
+    </div>
   );
 };
 

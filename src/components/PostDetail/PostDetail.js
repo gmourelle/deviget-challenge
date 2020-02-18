@@ -10,13 +10,15 @@ const PostDetail = () => {
     <Fragment>
       {!isEmpty && (
         <div className="detail__container">
-          <div>{post.author}</div>
-          <div>{post.title}</div>
-          {post.thumbnail.startsWith('http') && (
-            <div>
+          <span className="detail__author">{post.author}</span>
+
+          <div className="detail__thumbnail">
+            {post.thumbnail.startsWith('http') && (
               <img src={post.thumbnail} alt="thumbnail" />
-            </div>
-          )}
+            )}
+          </div>
+
+          <div>{post.title}</div>
         </div>
       )}
     </Fragment>

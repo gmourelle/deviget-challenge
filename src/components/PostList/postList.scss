@@ -1,9 +1,66 @@
+.posts {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    overflow: hidden;
+    height: 50px;
+    width: 40%;
+    background: black;
+
+    button {
+      display: flex;
+      align-items: center;
+      border: none;
+      color: $color-comments-text;
+      cursor: pointer;
+      background: black;
+      font-size: 15px;
+    }
+  }
+}
+
 .post {
   &__container {
     display: flex;
     flex-direction: column;
-    border-bottom: 1px solid black;
     color: $color-white;
+    color: $color-white;
+    padding: 10px;
+    height: 230px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  &__title {
+    margin-left: 5px;
+    span {
+      margin: 5px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    height: 180px;
+    padding: 10px;
+
+    span {
+      margin-left: 5px;
+    }
   }
 
   &__status {
@@ -18,18 +75,39 @@
     }
   }
 
+  &__thumbnail {
+    width: 140px;
+    height: 95px;
+  }
+
   &__dismiss {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     vertical-align: bottom;
     margin-right: 10px;
   }
-}
 
-.posts {
-  &__container {
+  &__arrow {
+    width: 20px;
+  }
+
+  &__footer {
     display: flex;
-    flex-direction: column;
-    margin-top: 10rem;
+    justify-content: space-between;
+    margin-right: 10px;
+    padding: 5px;
+    border-bottom: 1px solid $color-white;
+    button {
+      display: flex;
+      align-items: center;
+      border: none;
+      color: $color-white;
+      background: black;
+      cursor: pointer;
+    }
+  }
+
+  &__comments {
+    color: $color-comments-text;
   }
 }

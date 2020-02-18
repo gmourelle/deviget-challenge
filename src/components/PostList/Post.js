@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import * as moment from 'moment';
 import { selectPost, dismissPost } from '../../store/actions';
 import dismiss from '../../assets/icons/icon-dismiss.svg';
+import arrow from '../../assets/icons/chevron-right.svg';
 
 const Post = ({ post }) => {
   const [statusRead, setStatusRead] = useState(false);
@@ -15,27 +16,34 @@ const Post = ({ post }) => {
 
   return (
     <div className="post__container">
-      <div
-        className={`post__status ${
-          statusRead ? 'post__status--unread' : 'post__status--read'
-        }`}
-      />
+      <header className="post__header">
+        <div
+          className={`post__status ${
+            statusRead ? 'post__status--unread' : 'post__status--read'
+          }`}
+        />
+        <div className="post__title">
+          <span>{post.author}</span>
+          <span>{moment(post.created_utc, 'X').fromNow()}</span>
+        </div>
+      </header>
+      <content className="post__content" onClick={onSelectPost}>
+        <div className="post__thumbnail">
+          {post.thumbnail.startsWith('http') && (
+            <img alt="thumbnail" src={post.thumbnail} />
+          )}
+        </div>
+        <span>{post.title}</span>
+        <img alt="dismiss post" className="post__arrow" src={arrow} />
+      </content>
+      <footer className="post__footer">
+        <button type="button" onClick={onDismiss}>
+          <img alt="dismiss post" className="post__dismiss" src={dismiss} />
+          Dismiss post
+        </button>
 
-      <div>{post.author}</div>
-      <div>{moment(post.created_utc, 'X').fromNow()}</div>
-      <div onClick={onSelectPost}>{post.title}</div>
-      <div>
-        {post.thumbnail.startsWith('http') && (
-          <img alt="thumbnail" src={post.thumbnail} />
-        )}
-      </div>
-
-      <button type="button" onClick={onDismiss}>
-        <img alt="dismiss post" className="post__dismiss" src={dismiss} />{' '}
-        Dismiss post
-      </button>
-
-      <div>{post.num_comments} comments</div>
+        <div className="post__comments">{post.num_comments} comments</div>
+      </footer>
     </div>
   );
 };

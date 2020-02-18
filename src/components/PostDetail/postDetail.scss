@@ -1,8 +1,16 @@
 .detail {
   &__container {
-    width: 50%;
     position: fixed;
-    margin: 0 50%;
     padding: 5px;
+  }
+
+  &__author {
+    font-size: 20px;
+  }
+
+  &__thumbnail {
+    display: flex;
+    justify-content: center;
+    height: 100px;
   }
 }

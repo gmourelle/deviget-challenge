@@ -5,6 +5,7 @@ import Post from './Post';
 
 const PostList = () => {
   const { children } = useSelector(state => state.reddit.posts, shallowEqual);
+
   const dispatch = useDispatch();
 
   const onDismissAll = () => dispatch(dismissAllPost());
@@ -13,9 +14,11 @@ const PostList = () => {
     <div className="posts__container">
       {children &&
         children.map(post => <Post key={post.data.id} post={post.data} />)}
-      <button type="button" onClick={onDismissAll}>
-        dismiss All
-      </button>
+      <div className="posts__footer">
+        <button type="button" onClick={onDismissAll}>
+          Dismiss All
+        </button>
+      </div>
     </div>
   );
 };
