@@ -14,7 +14,19 @@ const PostDetail = () => {
 
           <div className="detail__thumbnail">
             {post.thumbnail.startsWith('http') && (
-              <img src={post.thumbnail} alt="thumbnail" />
+              <Fragment>
+                <img src={post.thumbnail} alt="thumbnail" />
+
+                <a
+                  className="detail__href"
+                  href={post.thumbnail}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  download
+                >
+                  Save to Gallery
+                </a>
+              </Fragment>
             )}
           </div>
 
