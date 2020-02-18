@@ -15,7 +15,7 @@
     overflow: hidden;
     overflow: hidden;
     height: 50px;
-    width: 40%;
+    width: 30%;
     background: black;
 
     button {
@@ -110,4 +110,19 @@
   &__comments {
     color: $color-comments-text;
   }
+}
+
+.post-transition-enter {
+  opacity: 0;
+}
+.post-transition-enter-active {
+  opacity: 1;
+  transition: opacity 800ms ease-in;
+}
+.post-transition-exit {
+  opacity: 1;
+}
+.post-transition-exit-active {
+  opacity: 0;
+  transition: opacity 800ms ease-in;
 }
