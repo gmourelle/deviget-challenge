@@ -30,7 +30,7 @@ const PostDetail = () => {
             )}
           </div>
 
-          <div>{post.title}</div>
+          <p className="detail__title">{post.title}</p>
         </div>
       )}
     </Fragment>

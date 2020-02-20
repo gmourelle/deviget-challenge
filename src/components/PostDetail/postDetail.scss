@@ -2,6 +2,10 @@
   &__container {
     position: fixed;
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 10px;
   }
 
   &__author {
@@ -13,6 +17,7 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-left: -30%;
   }
 
   &__href {
@@ -26,5 +31,9 @@
     width: 115px;
     height: 40px;
     margin-top: 10px;
+  }
+
+  &__title {
+    width: 65%;
   }
 }
