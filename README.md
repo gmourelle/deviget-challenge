@@ -24,5 +24,6 @@ yarn install
 yarn start
 ```
 
-When you execute the start command, a window is automatically displayed in your browser.
+## Demo
+https://deviget-gmourelle.netlify.com
 
