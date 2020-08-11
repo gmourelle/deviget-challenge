@@ -27,7 +27,7 @@ module.exports = {
     'import/imports-first': ['error', 'absolute-first'],
     'import/newline-after-import': 'error',
     'import/prefer-default-export': 0,
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'error',
     'react/prop-types': 0,
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
