@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useReducer } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { PostList, PostDetail, Header, Pager } from '../components';
 import { fetchPosts } from '../store/actions';
